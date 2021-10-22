@@ -21,7 +21,7 @@ public class BaseBallGame {
         stop();
     }
 
-    public void play() {
+    private void play() {
         int requestNum;
         do {
             InputView.showInputNumberMsg();
@@ -32,7 +32,7 @@ public class BaseBallGame {
         } while(!opponent.isCorrect(requestNum));
     }
 
-    public void stop() {
+    private void stop() {
         ResultView.showGameEndMsg();
         return;
     }
