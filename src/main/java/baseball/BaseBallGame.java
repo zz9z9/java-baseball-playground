@@ -30,20 +30,13 @@ public class BaseBallGame {
 
             ResultView.showResultMsg(result);
         } while(!opponent.isCorrect(requestNum));
+
+        ResultView.showCorrectMsg();
+        InputView.showGameGuideMsg();
     }
 
     private void stop() {
         ResultView.showGameEndMsg();
         return;
     }
-
-//    private boolean isValidNum(int n) {
-//        String num = String.valueOf(n);
-//
-//        if(num.length()!=3 || num.contains("0")) {
-//            return false;
-//        }
-//
-//        return true;
-//    }
 }
