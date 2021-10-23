@@ -28,8 +28,30 @@ public class Opponent {
 
         for(int i=0; i<input.length(); i++) {
             char c = input.charAt(i);
+            if(isStrike(c,i,ans)) { // TODO : 규칙위반(인덴트 2) 하지 않게 어떻게 구현할 수 있을까
+                strikeCnt++;
+                continue;
+            }
 
+            if(isBall(c,i,ans)) {
+                ballCnt++;
+                continue;
+            }
         }
+
+        if(ballCnt==0 && strikeCnt==0) {
+            return "낫씽";
+        }
+
+        if(ballCnt==0 && strikeCnt>0) {
+            return strikeCnt+"스트라이크";
+        }
+
+        if(ballCnt>0 && strikeCnt==0) {
+            return ballCnt+"볼";
+        }
+
+        return ballCnt+"볼 "+strikeCnt+"스트라이크";
     }
 
     public boolean isCorrect(int requestNum) {
