@@ -1,7 +1,7 @@
 package baseball;
 
 public class Opponent {
-    private final int answer = 123;
+    private final int answer = 123; // TODO : 랜덤하게 선정돼야함
 
     private boolean isStrike(char num, int index, String ans) {
         if(ans.charAt(index) == num) {
