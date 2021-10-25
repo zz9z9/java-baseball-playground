@@ -13,7 +13,7 @@ public class BaseBallGame {
     }
 
     public void start() {
-        InputView.showGameGuideMsg();
+        InputView.showKeepContinueMsg();
         while(player.keepContinue()) {
             play();
         }
@@ -33,8 +33,8 @@ public class BaseBallGame {
             ResultView.showResultMsg(result);
         } while(!opponent.isCorrect(requestNum));
 
-        ResultView.showCorrectMsg();
-        InputView.showGameGuideMsg();
+        ResultView.showGameDoneMsg();
+        InputView.showKeepContinueMsg();
     }
 
     private void stop() {

@@ -5,7 +5,7 @@ public class ResultView {
         System.out.println(msg+"\n");
     }
 
-    public static void showCorrectMsg() {
+    public static void showGameDoneMsg() {
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 
