@@ -22,6 +22,8 @@ public class BaseBallGame {
     }
 
     private void play() {
+        opponent.setAnswer();
+
         int requestNum;
         do {
             InputView.showInputNumberMsg();

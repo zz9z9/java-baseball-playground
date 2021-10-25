@@ -1,7 +1,30 @@
 package baseball;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class Opponent {
-    private final int answer = 123; // TODO : 랜덤하게 선정돼야함
+    private int answer;
+
+    public void setAnswer() {
+        // 1~9로 이루어진 세 자리 수 (각 자리수 마다 다르다)
+        List<Integer> li = IntStream.range(1,9).boxed().collect(Collectors.toList());
+        String ans = "";
+
+        while(ans.length() < 3) {
+            int idx = getNumBetweenRange(0, li.size());
+            ans = ans + li.get(idx);
+            li.remove(idx);
+        }
+
+        this.answer = Integer.parseInt(ans);
+//        System.out.println("this.answer :: "+this.answer+"\n\n");
+    }
+
+    private int getNumBetweenRange(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
 
     private boolean isStrike(char num, int index, String ans) {
         if(ans.charAt(index) == num) {
