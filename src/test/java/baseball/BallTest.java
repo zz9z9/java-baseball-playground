@@ -10,8 +10,8 @@ public class BallTest {
     @Test
     @DisplayName("숫자가 일치하지 않는 경우 낫싱")
     void play_nothing() {
-        Ball com = new Ball(1);
-        Ball user = new Ball(2);
+        Ball com = new Ball(1,0);
+        Ball user = new Ball(2,0);
 
         assertThat(com.play(user)).isEqualTo(BallStatus.NOTHING);
     }
